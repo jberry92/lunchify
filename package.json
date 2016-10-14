@@ -1,0 +1,19 @@
+{
+  "name": "lunchify",
+  "version": "1.0.0",
+  "description": "App to pick a resturant for lunch based on radius using Google maps APIs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jberry92/lunchify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jberry92/lunchify/issues"
+  },
+  "homepage": "https://github.com/jberry92/lunchify#readme"
+}
