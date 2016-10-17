@@ -1,0 +1,17 @@
+{
+  "name": "lunchify",
+  "description": "App to pick a resturant for lunch based on radius using Google maps APIs.",
+  "main": "app.js",
+  "authors": [
+    "Joshua Berry <joshua.berry92@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jberry92/lunchify",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
