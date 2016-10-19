@@ -1,3 +1,4 @@
+import {Link} from "react-router";
 import React, { Component } from 'react'
 
 class Layout extends Component {
@@ -5,9 +6,10 @@ class Layout extends Component {
     return(
       <nav>
 
-        <h1>Lunchify</h1>
+        <Link to='/'><h1 className="center-align title">Lunchify</h1></Link>
 
       </nav>
+
     );
   }
 }
