@@ -25,13 +25,10 @@ class Search extends Component {
 
   handleUpdate(result) {
     var result = LocationStore.getLocation();
-    console.log("Handling update")
     this.setState({results: result})
-    console.log(this.state.results)
   }
 
   handleClick() {
-    console.log("handling click")
     appDispatcher.dispatch(this.state)
   }
 
@@ -41,7 +38,7 @@ class Search extends Component {
   }
 
   render() {
-
+    let restaurantFeed = this.state.results
     return (
       <div className="container">
 
@@ -52,8 +49,9 @@ class Search extends Component {
             <input type="button" className="col s2 l2 waves-effect waves-light btn " value="Lunchify" onClick={this.handleClick.bind(this)}/>
           </form>
         </div>
-
-        <Feed resturants={this.state.results}/>
+        <div className="container resturants">
+          <Feed resturants={restaurantFeed}/>
+        </div>
       </div>
 
     );

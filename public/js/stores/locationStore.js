@@ -21,7 +21,10 @@ function handleAction(payload) {
 
 
   if (payload.action == Constants.SEARCH) {
-    console.log(payload.location)
+    for (var i = 0; i < 4; i++){
+      _locations.pop();
+    }
+
     let postCode = payload.location
     let location = axios.post("/search", {
         postCode: postCode
@@ -32,6 +35,7 @@ function handleAction(payload) {
           _locations.push(result.data.success.results[ranNum])
         }
         LocationStore.emit('update');
+
       })
 
   }
