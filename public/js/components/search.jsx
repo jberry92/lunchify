@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import appDispatcher from '../dispatchers/appDispatcher.js'
 import LocationStore from '../stores/locationStore.js'
 import Constants from "../constants/constants.js"
+var Feed = require('./feed.jsx')
 
 class Search extends Component {
 
@@ -9,29 +10,35 @@ class Search extends Component {
     super(props)
     this.state = {
       action: "search",
-      location: ""
-
+      location: "",
+      results: []
     }
+    this.handleUpdate = this.handleUpdate.bind(this)
   }
 
   componentDidMount() {
+
     LocationStore.on("update", this.handleUpdate)
+
   }
 
-  handleUpdate() {
-    const longitude = LocationStore.getLocation();
-    console.log(longitude);
+  handleUpdate(result) {
+    var result = LocationStore.getLocation();
+    console.log("Handling update")
+    this.setState({
+        results: result
+      })
+    console.log(this.state.results)
   }
 
   handleClick() {
-
+    console.log("handling click")
     appDispatcher.dispatch(this.state)
   }
 
   handleFieldChange(event) {
     this.setState({
         location: event.target.value
-
     });
 
   }
@@ -46,7 +53,10 @@ class Search extends Component {
           <input type="button" value="Lunchify" onClick={this.handleClick.bind(this)}/>
         </form>
 
+      <Feed resturants={this.state.results} />
       </div>
+
+
 
     );
   }
